@@ -3,6 +3,11 @@
 I display different default star number from 0-5.
 use mouse and click to see.
 
+## instructions
+1. Go into this directory `cd Sarratings`
+2. Run `npm install` to install packages
+3. Run `npm start` to start the client side----It only have client side anyway
+
 Implement a 5-star widget for an eCommerce site for users to record a product rating. The widgetdisplays a horizontal row of stars that are either outlined or black, according to the product rating,
 from left to right. E.g. ★★★☆☆ = rating of 3.
 Multiple 5-star widgets can be present on a single page. If a user has not rated a product, the
