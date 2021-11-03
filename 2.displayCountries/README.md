@@ -6,6 +6,10 @@ This reactJs project is for the second task:
 2. Use npm install start to run this
 3. the displaycountry file is an HTML with pure Javascript.
 4. Pick whatever you like
+## instructions
+1. Go into this directory `cd Sarratings`
+2. Run `npm install` to install packages
+3. Run `npm start` to start the client side----It only have client side anyway
 
 Use modern JavaScript and HTML5 to access information from the https://restcountries.eu/ API. 
 The goal isto display a list of all the capital cities for the country and all of its neighbouring countries. E.g. Searching for“USA” will result in a list showing "Washington, D.C.", "Ottawa", and "Mexico City". 
