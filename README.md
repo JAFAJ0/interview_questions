@@ -1,2 +1,4 @@
 # interview_questions
-Created with CodeSandbox
+Check each folder for details
+
+I am more good at the first three.

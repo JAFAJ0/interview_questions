@@ -1,0 +1,62 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+  "use strict";
+  let nameUrl = "https://restcountries.com/v2/name/";
+  let capitalUrl = "https://restcountries.com/v2/alpha/";
+  //Get all information in a time
+  async function retriveCapname(cname) {
+    let acUrl = nameUrl.concat(cname);
+    let res = await fetch(acUrl);
+    let cjson = await res.json();
+    if (!cjson[0]) {
+      return "Not a country name";
+    }
+    const result = "";
+    for (let i = 0; i < cjson.length; i++) {
+      result = result.concat(await cjson[i].name);
+      result = result.concat(":");
+      let capital = await cjson[i].capital;
+      if (!capital) {
+        result = result.concat(await cjson[i].name);
+      } else {
+        result = result.concat(await cjson[i].capital);
+      }
+      let boarders = await cjson[i].borders;
+      if (!!boarders) {
+        for (let j = 0; j < boarders.length; j++) {
+          result = result.concat(",");
+          let accUrl = capitalUrl.concat(boarders[j]);
+          let resC = await fetch(accUrl);
+          let cjsonC = await resC.json();
+          if (!cjsonC.capital) {
+            result = result.concat(await cjsonC.name);
+          } else {
+            result = result.concat(await cjsonC.capital);
+          }
+        }
+      }
+      result = result.concat(";");
+      result = result.concat("<br />");
+    }
+    return result;
+  }
+  function getCaps() {
+    let cname = document.getElementById("cname");
+    if (!cname.value) {
+      document.getElementById("display").innerHTML =
+        "You should enter A name of country";
+    } else {
+      retriveCapname(cname.value).then(
+        (v) => (document.getElementById("display").innerHTML = v)
+      );
+    }
+  }
+</script>
+<p id="explaination">Enter names of the Country here</p>
+<input type="text" name="enter" class="enter" value="" id="cname" />
+<input
+  type="button"
+  onClick="getCaps()"
+  value="find capital cities for the country and all of its neighbouring countries"
+/>
+<p id="display">Countries will be display here</p>

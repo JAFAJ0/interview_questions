@@ -1,0 +1,23 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin-left: "25%";
+  margin-right: "15%";
+}
+.input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+  width: 96%;
+  justify-content: center;
+  margin-left: 1.5%;
+  padding: 0.5rem;
+  font-size: 25px;
+  font-family: "Raleway", sans-serif;
+}
+.button {
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 10%;
+  cursor: pointer;
+}
